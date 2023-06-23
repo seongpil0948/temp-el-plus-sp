@@ -1,12 +1,12 @@
-import type { PropType } from 'vue'
-import { defineComponent, defineExpose } from 'vue'
+import type { PropType } from "vue";
+import { defineComponent, defineExpose } from "vue";
 export interface IList {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 
 export const List = defineComponent({
-  name: 'List',
+  name: "List",
   props: {
     data: {
       required: true,
@@ -16,26 +16,26 @@ export const List = defineComponent({
   },
   methods: {
     dataLen() {
-      return this.data.length
+      return this.data.length;
     },
   },
-  expose: ['dataLen'],
+  expose: ["resData"],
   setup(props) {
     return () => (
       <div>
         <strong>List</strong>
         <ul>
           {vFor(props.data, (v) => {
-            return <li key={v.id}>{v.name}</li>
+            return <li key={v.id}>{v.name}</li>;
           })}
         </ul>
       </div>
-    )
+    );
   },
-})
+});
 
 function vFor<T>(arr: T[], callback: (children: T, index: number) => any) {
   return arr.map((v, index) => {
-    return callback(v, index)
-  })
+    return callback(v, index);
+  });
 }

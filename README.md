@@ -1,18 +1,13 @@
-# Vue 3 + TypeScript + Vite
+1. exposed 된 프로퍼티가 아니더라도 특정 약속된 이름의 emits 을 통해 실행된 값을 리턴으로 받고싶다.
+2. 팝업이 닫히더라도 memory에서 삭제하지 않을 수 있다.
+3. onAction, onVanished 훅이있어서
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support For `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+msgBoxWrapper: 프레임워크 메시지박스를 래핑한다
+- 구성요소
+  - 메시지 래핑된 컴포넌트
+  - 메시지 컴포넌트
+  - 하위 컴포넌트
+- 하는 역할
+  - await Msgbox(child: VNode, emitKey="onVanished")
+  - 이 놈은 메시지 박스를 호출하고 닫힐경우 에밋키 발생
+  - 

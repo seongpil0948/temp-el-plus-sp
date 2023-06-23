@@ -19,6 +19,8 @@ async function openTsxTextList() {
       data: [
         { id: '1', name: 'sp' },
         { id: '2', name: 'hi' },
+        { id: '3', name: 'bye' },
+        { id: '4', name: 'zeze' },
       ],
     })
     ,
@@ -44,12 +46,11 @@ async function openElElement() {
 }
 async function openVueFile() {
   const returnVal = await ElMsgReturnBox({
-    vmReturnKey: 'dynamicValidateForm',
     title: 'El Element Renderer',
     message: h(MsgForm),
     // message: h(MsgForm),
   })
-  console.log('returnVal: ', returnVal.vmReturnValue)
+  console.log('returnVal: ', returnVal, retruenVal.resData)
 }
 
 const count = ref(0)
